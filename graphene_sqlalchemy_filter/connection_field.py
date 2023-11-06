@@ -25,14 +25,14 @@ if MYPY:
         Type,
         Union,
     )  # noqa: F401; pragma: no cover
-    from graphql import ResolveInfo  # noqa: F401; pragma: no cover
+    from graphql.type import GraphQLResolveInfo as ResolveInfo  # noqa: F401; pragma: no cover
     from graphene.relay import Connection  # noqa: F401; pragma: no cover
     from sqlalchemy.orm import Query  # noqa: F401; pragma: no cover
     from .filters import FilterSet  # noqa: F401; pragma: no cover
 
 
 graphene_sqlalchemy_version_lt_2_1_2 = tuple(
-    map(int, graphene_sqlalchemy.__version__.split('.'))
+    map(int, graphene_sqlalchemy.__version__.split('b')[0].split('.'))
 ) < (2, 1, 2)
 
 

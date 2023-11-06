@@ -12,7 +12,7 @@ from graphene.types.inputobjecttype import InputObjectTypeOptions
 from graphene.types.utils import get_field_as
 from graphene_sqlalchemy import __version__ as gqls_version
 from graphene_sqlalchemy.converter import convert_sqlalchemy_type
-from graphql import ResolveInfo
+from graphql.type import GraphQLResolveInfo as ResolveInfo
 
 # Database
 from sqlalchemy import and_, cast, inspection, not_, or_, types
@@ -55,7 +55,7 @@ except ImportError:
     TSVectorType = object
 
 
-gqls_version = tuple([int(x) for x in gqls_version.split('.')])
+gqls_version = tuple([int(x) for x in gqls_version.split('b')[0].split('.')])
 
 
 def _get_class(obj: 'GRAPHENE_OBJECT_OR_CLASS') -> 'Type[graphene.ObjectType]':

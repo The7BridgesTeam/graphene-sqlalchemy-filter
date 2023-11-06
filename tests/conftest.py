@@ -2,7 +2,7 @@
 import pytest
 
 # GraphQL
-from graphql import ResolveInfo
+from graphql.type import GraphQLResolveInfo as ResolveInfo
 
 # Database
 from sqlalchemy import create_engine
